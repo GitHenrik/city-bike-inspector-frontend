@@ -1,7 +1,6 @@
 import axios from "axios"
 
-// base URL: local express backend
-const baseUrl = "http://localhost:3001"
+const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
 // station URL's
 const stationsBaseUrl = `${baseUrl}/stations`
