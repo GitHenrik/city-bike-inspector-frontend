@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const baseUrl = process.env.REACT_APP_BACKEND_URL;
+const baseUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:3001";
 
 // station URL's
 const stationsBaseUrl = `${baseUrl}/stations`
@@ -22,9 +22,16 @@ const getStationByName = (name: string) => {
     // .finally(() => setIsLoading(false))
 }
 
+const getStations = () => {
+  return axios.get(stationsBaseUrl)
+    .then(response => response.data)
+    .catch(error => console.warn(error))
+}
+
 const stationApi = {
   getStationNames,
-  getStationByName
+  getStationByName,
+  getStations
 }
 
 export default stationApi

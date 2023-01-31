@@ -1,0 +1,8 @@
+thead {
+  background: rgb(197, 172, 220);
+  font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+  background: #CCC;
+}
